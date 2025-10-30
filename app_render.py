@@ -40,6 +40,7 @@ else:
 
 # Setup Dash App Layout
 app = dash.Dash(__name__)
+server = app.server
 
 # Layout of the dashboard
 app.layout = html.Div([
