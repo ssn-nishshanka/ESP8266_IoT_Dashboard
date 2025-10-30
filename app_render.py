@@ -5,7 +5,6 @@ import dash  # Dash framework for building interactive web apps
 from dash import dcc, html  # Dash components for graphs and HTML elements
 from dash.dependencies import Input, Output  # For creating callbacks
 import plotly.graph_objs as go  # For creating interactive Plotly graphs
-# import serial  # Removed for Render
 import threading  # For running background tasks
 import time  # For timestamps and delays
 import pandas as pd  # For data storage and manipulation
@@ -15,28 +14,20 @@ import numpy as np  # For predictive trend calculations
 # Persistent logging setup
 CSV_FILE = "sensor_log.csv"
 
-# Create an empty DataFrame to store sensor readings or load existing CSV
+# Load CSV data (always)
 if os.path.exists(CSV_FILE):
     data = pd.read_csv(CSV_FILE)
 else:
+    # If CSV not found, create empty DataFrame with expected columns
     data = pd.DataFrame(columns=["Time", "Temperature", "Humidity", "Light"])
 
-
-# Skip serial read on Render
+# Skip serial read entirely since we only want CSV data
 def read_serial():
-    """Render environment — no serial port. This function does nothing."""
-    print("Serial reading skipped — running on Render with CSV data only.")
-    while True:
-        time.sleep(5)
+    """Serial reading skipped — using CSV data only."""
+    pass
 
-
-# On Render, skip launching serial thread
-if os.environ.get("RENDER", "true") == "true":
-    print("Running on Render environment — skipping serial port thread.")
-else:
-    thread = threading.Thread(target=read_serial)
-    thread.daemon = True
-    thread.start()
+# Do not launch serial thread
+print("Using sensor_log.csv for all data — serial reading skipped.")
 
 # Setup Dash App Layout
 app = dash.Dash(__name__)
@@ -370,7 +361,6 @@ def toggle_hist_dropdown_visibility(value):
 )
 def disable_slider(value):
     return 'show' in value
-
 
 # Run the Dash server
 if __name__ == "__main__":
