@@ -20,9 +20,25 @@ This project demonstrates a complete IoT pipeline for monitoring and visualizing
 
 ## Hardware
 
-* **ESP8266** microcontroller
-* **DHT11** temperature and humidity sensor
-* **LM393** digital light sensor
+- **ESP8266** Microcontroller
+- **DHT11** Temperature & Humidity Sensor
+- **LM393** Light Sensor Module
+- USB Cable for powering the ESP8266
+
+## Wiring
+
+### DHT11 Sensor
+- VCC -> 3.3V (ESP8266)
+- GND -> GND (ESP8266)
+- DATA -> D4 (GPIO2 on ESP8266)
+
+### LM393 Light Sensor
+- VCC -> 3.3V (ESP8266)
+- GND -> GND (ESP8266)
+- DO (Digital Output) -> D5 (GPIO14 on ESP8266)
+
+### Microcontroller
+- ESP8266 powered via USB
 
 <img width="705" height="397" alt="image" src="https://github.com/user-attachments/assets/70854910-2e57-49eb-8ee6-dd32e39bd94c" />
 
