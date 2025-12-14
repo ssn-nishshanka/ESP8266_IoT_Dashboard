@@ -69,7 +69,7 @@ app = dash.Dash(__name__)
 
 # Layout of the dashboard
 app.layout = html.Div([
-    html.H2("Smart Classroom Environment Tracker",
+    html.H2("IoT-Based Warehouse Environment Dashboard",
             style={'textAlign': 'center', 'color': '#003366', 'margin-bottom': '20px'}),
 
     # Cards for alerts and summary metrics
