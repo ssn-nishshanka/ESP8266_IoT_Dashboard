@@ -71,12 +71,6 @@ python main.py
 
 3. Open browser at `http://127.0.0.1:8050`
 
-## Usage
-
-* Monitor **temperature**, **humidity**, and **light presence** in real-time
-* Use dropdowns and sliders to view historical trends or adjust data points
-* Alerts display for high temperature or humidity
-
 <img width="1815" height="851" alt="image" src="https://github.com/user-attachments/assets/58ed40c5-f804-4870-ad93-6bd4c132bf5b" />
 
 <img width="1820" height="828" alt="image" src="https://github.com/user-attachments/assets/f43f380f-8d26-40f1-8c82-ed1303c389d1" />
@@ -87,5 +81,8 @@ python main.py
 
 <img width="1823" height="806" alt="image" src="https://github.com/user-attachments/assets/9ca58619-e54b-4d98-9ccf-1cc177436c8b" />
 
+## Usage
 
-
+* Monitor **temperature**, **humidity**, and **light presence** in real-time
+* Use dropdowns and sliders to view historical trends or adjust data points
+* Alerts display for high temperature or humidity
